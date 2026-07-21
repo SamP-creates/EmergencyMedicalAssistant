@@ -93,7 +93,7 @@ We designed **E.M.A**, an **autonomous robot** that:
 | **Test Strip Reader**       | RGB sensor array                   | Detects color changes using camera vision to identify health issues.       |
 | **Touchscreen Interface**   | 7-inch HDMI LCD Touchscreen        | Allows patients to input data and interact with the robot.                 |
 | **Battery**                 | 12V & 5V Dual Battery Pack         | Powers the robot for **6+ hours** of continuous operation.                  |
-| **Chassis**                 | Aluminium FRame                    | Lightweight, durable, and modular.                                          |
+| **Chassis**                 | Aluminium Frame                    | Lightweight, durable, and modular.                                          |
 
 ### **💻 Software & AI Models**
 | **Technology**              | **Purpose**                                                                 |
