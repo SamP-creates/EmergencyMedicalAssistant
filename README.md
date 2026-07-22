@@ -39,31 +39,31 @@ EmergencyMedicalAssistant/
 │
 ├── WRO_2024-2025_Report.pdf           # Project documentation
 │
-├── **/Code**                          # Source code
+├── /Code                              # Source code
 │   ├── /Arduino                       # Arduino Mega code (C++)
 │   │   ├── Movement_Code.ino          # Controls movement and height adjustment using sensor feedback
 │   │   └── Urine_Test.ino             # Controls motion sequence for urine testing procedure
-│   |
-|   ├── /RaspberryPi                   # Raspberry Pi 5 code (Python)
+│   │
+│   ├── /RaspberryPi                   # Raspberry Pi 5 code (Python)
 │   │   ├── Color_Detection.py         # RGB array detection (openCV)
 │   │   └── Face_Recognition.py        # Face recognition cross-checking code (compreface)
-|   |
+│   │
 │   └── /UserInterface                 
 │       ├── User_Interface.py          # User interface to collect data from patients
 │       └── Photos.png                 # Graphics utilized throughout the user interface
 │
-├── **/Diagrams**                      # Flow charts and circuit diagrams 
+├── /Diagrams                          # Flow charts and circuit diagrams 
 │   ├── Circuit_Diagram.pdf                 
 │   └── Procedural_Flowchart.pdf  
 │
-├── **/Robot**                         # Photos and videos
+├── /Robot                             # Photos and videos
 │   ├── Height_Sensing.mp4             # Height changing and robot movement
 │   ├── Robot_Motion.mp4
 │   ├── Robot.jpg
 │   ├── Test_Strip_Arm_Back_View.mp4   # Urine testing arm 
 │   └── Test_Strip_Arm_Side_View.mp4
-|
-└── **README.md**                      # This file!
+│
+└── README.md                          # This file!
 ```
 
 ---
