@@ -40,17 +40,17 @@ EmergencyMedicalAssistant/
 ├── WRO_2024-2025_Report.pdf           # Project documentation
 │
 ├── **/Code**                          # Source code
-│   ├── /RaspberryPi                   # Raspberry Pi 5 code (Python)
-│   │   ├── Face_Recognition.py        # Face recognition cross-checking code (compreface)
-│   │   └── Color_Detection.py         # RGB array detection (opencv)
+│   ├── /Arduino                       # Arduino Mega code (C++)
+│   │   ├── Movement_Code.ino          # Controls movement and height adjustment using sensor feedback
+│   │   └── Urine_Test.ino             # Controls motion sequence for urine testing procedure
 │   |
-|   ├── /UserInterface
-│   │   ├── User_Interface.py          # User interface to collect data from patients
-│   │   └── Photos.png                 # Graphics utilized throughout the user interface
+|   ├── /RaspberryPi                   # Raspberry Pi 5 code (Python)
+│   │   ├── Color_Detection.py         # RGB array detection (openCV)
+│   │   └── Face_Recognition.py        # Face recognition cross-checking code (compreface)
 |   |
-│   └── /Arduino                       # Arduino Mega code (C++)
-│       ├── MovementCode.ino           # Controls movement and height adjustment using sensor feedback
-│       └── UrineTest.ino              # Controls motion sequence for urine testing procedure
+│   └── /UserInterface                 
+│       ├── User_Interface.py          # User interface to collect data from patients
+│       └── Photos.png                 # Graphics utilized throughout the user interface
 │
 ├── **/Diagrams**                      # Flow charts and circuit diagrams 
 │   ├── Procedural_Flowchart.pdf                 
