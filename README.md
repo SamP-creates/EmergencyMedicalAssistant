@@ -168,6 +168,8 @@ E.M.A operates through **four primary phases** to streamline emergency room tria
         - **Success:** History verified → Proceed to rapid urine test
         - **Failure:** History unverified → Proceed to remaining questions
 
+---
+
 ### **📌 Phase 2: Urine Sample Collection & Analysis**
 **Objective:** Automate urine testing to detect early signs of health issues.
 
@@ -189,6 +191,7 @@ E.M.A operates through **four primary phases** to streamline emergency room tria
      | Leukocytes     | Negative (white) to 3+ (purple)  | Hue: 270–330               |
      | Nitrites       | Negative (beige) to Positive (pink)| R > 200, G < 100, B < 100  |
 
+---
 
 ### **📌 Phase 3: Data Storage & Doctor Access**
 **Objective:** Securely store and retrieve patient data for healthcare providers.
