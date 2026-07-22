@@ -154,42 +154,12 @@ E.M.A operates through **four primary phases** to streamline emergency room tria
    - The **VEX EDR 2-Wire Motors** adjust E.M.A’s height from **2' to 4.5'** based on:
      - **Patient input** (via hand gestures through VL53L0X ToF sensors)
      - **Default settings** (3')
-   - *Code snippet (Arduino):*
-     ```cpp
-     void adjustHeight(int targetHeight) {
-       while (currentHeight != targetHeight) {
-         if (currentHeight < targetHeight) {
-           digitalWrite(heightUpPin, HIGH);
-           delay(50);
-           digitalWrite(heightUpPin, LOW);
-         } else {
-           digitalWrite(heightDownPin, HIGH);
-           delay(50);
-           digitalWrite(heightDownPin, LOW);
-         }
-         currentHeight = readHeightSensor(); // VL53L0X
-       }
-     }
-     ```
 
 3. **👤 Facial Recognition & Identity Verification**
    - The **Logitech C920 webcam** captures a **frontal face image**.
    - **CompreFace API** matches the image against a piece of identity:
      - **Success:** Patient ID confirmed → Proceed to data collection.
      - **Failure:** Prompt patient to re-position or verify manually.
-   - *Python snippet (Raspberry Pi):*
-     ```python
-     import compreface
-     from compreface.service import RecognitionService
-
-     def verify_identity(image_path):
-       service = RecognitionService(
-         api_key="YOUR_COMPREFACE_API_KEY",
-         url="http://localhost:8000"
-       )
-       result = service.recognize(image_path)
-       return result["verified"]
-     ```
 
 4. **❓Patient Interaction**
    - **Touchscreen Interface:**
@@ -197,20 +167,6 @@ E.M.A operates through **four primary phases** to streamline emergency room tria
      - Displays a **symptom questionnaire** (e.g., "Do you have a history of urinary issues").
         - **Success:** History verified → Proceed to rapid urine test
         - **Failure:** History unverified → Proceed to remaining questions
-   - *Questionnaire example:*
-     ```python
-     import cv2
-     import numpy as np
-
-     def detect_redness(frame):
-       hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-       lower_red = np.array([0, 120, 70])
-       upper_red = np.array([10, 255, 255])
-       mask = cv2.inRange(hsv, lower_red, upper_red)
-       return cv2.countNonZero(mask) > 5000  # Threshold for redness
-     ```
-
----
 
 ### **📌 Phase 2: Urine Sample Collection & Analysis**
 **Objective:** Automate urine testing to detect early signs of health issues.
@@ -218,18 +174,6 @@ E.M.A operates through **four primary phases** to streamline emergency room tria
 1. **🧪 Sample Collection**
    - Patient provides urine in a **disposable cup** placed on a **weight sensor tray**.
    - E.M.A’s **3D-printed arm** deploys a grabbing mechanism to collect a new urine test strip.
-   - *Mechanical arm code (Arduino):*
-     ```cpp
-     void collectSample() {
-       servoGripper.write(45);  // Open gripper
-       delay(1000);
-       servoArm.write(90);      // Move to sample
-       delay(2000);
-       servoPipette.write(180); // Activate pipette
-       delay(3000);
-       servoPipette.write(0);   // Retract pipette
-     }
-     ```
 
 2. **🔬 Test Strip Analysis**
    - The sample is applied to a **standard urine test strip**.
@@ -245,44 +189,12 @@ E.M.A operates through **four primary phases** to streamline emergency room tria
      | Leukocytes     | Negative (white) to 3+ (purple)  | Hue: 270–330               |
      | Nitrites       | Negative (beige) to Positive (pink)| R > 200, G < 100, B < 100  |
 
-   - *Python snippet (OpenCV analysis):*
-     ```python
-     def analyze_strip(image_path):
-       strip = cv2.imread(image_path)
-       hsv = cv2.cvtColor(strip, cv2.COLOR_BGR2HSV)
-
-       results = {
-         "ph": detect_pH(hsv),
-         "protein": detect_protein(strip),
-         "glucose": detect_glucose(strip),
-         # ... other parameters
-       }
-       return results
-     ```
----
 
 ### **📌 Phase 3: Data Storage & Doctor Access**
 **Objective:** Securely store and retrieve patient data for healthcare providers.
 
 1. **🔒 Encrypted Data Storage**
    - Patient folders are stored securely for healthcare providers to access with ease:
-     ```
-     /data_storage/patient_records/
-     └── PATIENT_001/
-         ├── personal_info.json.enc
-         ├── urine_test_results.json.enc
-         └── facial_recognition_data.json.enc
-     ```
-   - *Encryption snippet (Python):*
-     ```python
-     import hashlib
-     from Crypto.Cipher import AES
-
-     def encrypt_data(data, key):
-       cipher = AES.new(key, AES.MODE_EAX)
-       ciphertext, tag = cipher.encrypt_and_digest(data)
-       return cipher.nonce + tag + ciphertext
-     ```
 
 ---
 
@@ -294,29 +206,9 @@ E.M.A operates through **four primary phases** to streamline emergency room tria
      - **VEX EDR 2-Wire Motors** (for base and height movement) and **servos** (for arm adjustment).
    - **Sensor Integration:**
      - **VL53L0X ToF sensors** detect hand gestures and patient motion.
-   - *Full motor control loop:*
-     ```cpp
-     void loop() {
-       int distance = tofSensor.readRangeSingleMillimeter();
-       if (distance < 300) {  // 30cm threshold
-         navigateAroundObstacle();
-       }
-       updateBatteryStatus();
-       delay(100);
-     }
-     ```
 
 2. **💻 AI & Data Processing (Raspberry Pi 5)**
    - Runs **CompreFace**, and **OpenCV** in parallel.
-   - **UART Communication** with Arduino:
-     ```python
-     import serial
-     ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
-
-     def send_command(command):
-       ser.write(command.encode())
-       return ser.readline().decode().strip()
-     ```
 
 3. **⚡ Power Management**
    - **Battery:** 12V & 5V Rechargeable Battery Pack.
