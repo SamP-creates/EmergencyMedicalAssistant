@@ -24,12 +24,47 @@ The theme for the 2024–2025 season was **"The Future of Robots"** Teams were e
 ## **📌 Table of Contents**
 | **Section**                     | **Description**                                                                 |
 |----------------------------------|---------------------------------------------------------------------------------|
+| [📂 Folder Structure](#-folder-structure) | Detailed breakdown of all project folders and their contents.                   |
 | [📜 Project Overview](#-project-overview) | Introduction, objectives, and problem statement.                                |
 | [🎯 Problem Statement](#-problem-statement) | The challenge we addressed and its real-world impact.                           |
 | [🛠️ Technical Specifications](#-technical-specifications) | Hardware, software, AI models, and security features.                           |
 | [🚀 How E.M.A Works](#-how-ema-works) | Step-by-step explanation of the robot’s functionality.                          |
-| [📂 Folder Structure](#-folder-structure) | Detailed breakdown of all project folders and their contents.                   |
 
+
+---
+
+## **📂 Folder Structure**
+```bash
+EmergencyMedicalAssistant/
+│
+├── WRO_2024-2025_Report.pdf           # Project documentation
+│
+├── **/Code**                          # Source code
+│   ├── /RaspberryPi                   # Raspberry Pi 5 code (Python)
+│   │   ├── Face_Recognition.py        # Face recognition cross-checking code (compreface)
+│   │   └── Color_Detection.py         # RGB array detection (opencv)
+│   |
+|   ├── /UserInterface
+│   │   ├── User_Interface.py          # User interface to collect data from patients
+│   │   └── Photos.png                 # Graphics utilized throughout the user interface
+|   |
+│   └── /Arduino                       # Arduino Mega code (C++)
+│       ├── MovementCode.ino           # Controls movement and height adjustment using sensor feedback
+│       └── UrineTest.ino              # Controls motion sequence for urine testing procedure
+│
+├── **/Diagrams**                      # Flow charts and circuit diagrams 
+│   ├── Procedural_Flowchart.pdf                 
+│   └── Circuit_Diagram.pdf        
+│
+├── **/Robot**                         # Photos and videos
+│   ├── Height_Sensing.mp4             # Height changing and robot movement
+│   ├── Robot_Motion.mp4
+│   ├── Robot.jpg
+│   ├── Test_Strip_Arm_Back_View.mp4   # Urine testing arm 
+│   └── Test_Strip_Arm_Side_View.mp4
+|
+└── **README.md**                      # This file!
+```
 
 ---
 
@@ -289,35 +324,4 @@ E.M.A operates through **four primary phases** to streamline emergency room tria
    - 
 ---
 
-## **📂 Folder Structure**
-```bash
-EmergencyMedicalAssistant/
-│
-├── WRO_2024-2025_Report.pdf           # Project documentation
-│
-├── **/Code**                          # Source code
-│   ├── /RaspberryPi                   # Raspberry Pi 5 code (Python)
-│   │   ├── Face_Recognition.py        # Face recognition cross-checking code (compreface)
-│   │   └── Color_Detection.py         # RGB array detection (opencv)
-│   |
-|   ├── /UserInterface
-│   │   ├── User_Interface.py          # User interface to collect data from patients
-│   │   └── Photos.png                 # Graphics utilized throughout the user interface
-|   |
-│   └── /Arduino                       # Arduino Mega code (C++)
-│       ├── MovementCode.ino           # Controls movement and height adjustment using sensor feedback
-│       └── UrineTest.ino              # Controls motion sequence for urine testing procedure
-│
-├── **/Diagrams**                      # Flow charts and circuit diagrams 
-│   ├── Procedural_Flowchart.pdf                 
-│   └── Circuit_Diagram.pdf        
-│
-├── **/Robot**                         # Photos and videos
-│   ├── Height_Sensing.mp4             # Height changing and robot movement
-│   ├── Robot_Motion.mp4
-│   ├── Robot.jpg
-│   ├── Test_Strip_Arm_Back_View.mp4   # Urine testing arm 
-│   └── Test_Strip_Arm_Side_View.mp4
-|
-└── **README.md**                      # This file!
 
