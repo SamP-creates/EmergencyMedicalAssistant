@@ -53,8 +53,8 @@ EmergencyMedicalAssistant/
 │       └── Photos.png                 # Graphics utilized throughout the user interface
 │
 ├── **/Diagrams**                      # Flow charts and circuit diagrams 
-│   ├── Procedural_Flowchart.pdf                 
-│   └── Circuit_Diagram.pdf        
+│   ├── Circuit_Diagram.pdf                 
+│   └── Procedural_Flowchart.pdf  
 │
 ├── **/Robot**                         # Photos and videos
 │   ├── Height_Sensing.mp4             # Height changing and robot movement
