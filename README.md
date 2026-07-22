@@ -1,10 +1,10 @@
 # **🏆 WRO 2025 Future Innovators: 6th Place International Champions**
-**Project Name:** *E.M.A: Emergency Medical Assistant*
-**Team Name:** *RoboCare Innovations*
-**Event:** *World Robot Olympiad (WRO) 2025 – Future Innovators Category*
-**Location:** *Ljubljana, Slovenia*
-**Rank:** *6th Place (Top 10 Global Finalists)*
-**Year:** *2024-2025*
+- **Project Name:** *E.M.A: Emergency Medical Assistant*
+- **Team Name:** *RoboCare Innovations*
+- **Event:** *World Robot Olympiad (WRO) 2025 – Future Innovators Category*
+- **Location:** *Ljubljana, Slovenia*
+- **Rank:** *6th Place (Top 10 Global Finalists)*
+- **Year:** *2024-2025*
 
 ---
 
