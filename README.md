@@ -216,7 +216,7 @@ E.M.A operates through **four primary phases** to streamline emergency room tria
 3. **⚡ Power Management**
    - **Battery:** 12V & 5V Rechargeable Battery Pack.
    - **Charging:** Automatic switch to **12V power adapter** when docked.
-   - 
+    
 ---
 
 
